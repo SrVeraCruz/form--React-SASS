@@ -1,0 +1,17 @@
+@use '../variables'
+@use '../mixins'
+
+.form-control
+  display: flex
+  flex-direction: column
+  gap: .6rem
+  margin-bottom: 2rem
+
+  label
+    font-weight: bold
+    font-size: .9rem
+    color: variables.$text-color-secondary
+
+  input
+    @include mixins.input
+    

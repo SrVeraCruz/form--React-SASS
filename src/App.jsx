@@ -2,15 +2,17 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr"
 
 import { FiSend } from "react-icons/fi"
 
-import UserFrom from "./components/UserFrom"
+import UserForm from "./components/UserForm"
 import ReviewForm from "./components/ReviewForm"
 import Thanks from "./components/Thanks"
 
 //Hooks
 import { useForm } from "./hooks/useForm"
 
+import "./styles/components/app.sass"
+
 function App() {
-  const formComponents = [<UserFrom />, <ReviewForm />, <Thanks />];
+  const formComponents = [<UserForm />, <ReviewForm />, <Thanks />];
   
   const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } = useForm(formComponents)
 
@@ -24,13 +26,13 @@ function App() {
       </div>
       <div className='form-container'>
         <p>steps</p>
-        <form onSubmit={(e)=> changeStep(currentStep +1, e)}>
+        <form onSubmit={(e)=> changeStep(currentStep + 1, e)}>
           <div className="inputs-Container">
             {currentComponent}
           </div>
           <div className="actions">
             {isFirstStep ? "" : (
-              <button type='button' onClick={()=> changeStep(currentStep -1)}>
+              <button type='button' onClick={()=> changeStep(currentStep - 1)}>
                 <GrFormPrevious />
                 <span>Previous</span>
               </button>

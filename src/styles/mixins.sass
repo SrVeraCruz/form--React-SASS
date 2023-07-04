@@ -1,0 +1,14 @@
+@use './variables'
+
+@mixin input
+  padding: .6rem
+  border: none
+  outline: none
+  border-bottom: .1rem solid transparent
+  border-radius: variables.$border-radius
+  box-shadow: variables.$box-input-shadow
+  transition: variables.$transition
+
+  &:focus
+      border-bottom: .1rem solid variables.$text-color-secondary
+  
