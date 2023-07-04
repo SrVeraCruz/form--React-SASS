@@ -1,0 +1,32 @@
+@use '../variables'
+@use '../mixins'
+
+.steps
+  @include mixins.center
+  gap: 4rem
+  margin-bottom: 2rem
+  position: relative
+
+  &::after
+    content: ""
+    width: 85%
+    border-bottom: .1rem solid variables.$bt-hover-bg-color
+    position: absolute
+    top: 1.1rem
+
+  .step
+    text-align: center
+    background-color: variables.$form-gb-color
+    z-index: 1
+    width: 7.5rem
+    padding: .5rem
+
+    svg
+      font-size: 1.5rem
+      margin-bottom: .2rem
+
+.active
+  font-weight: bold
+
+  svg
+    fill: variables.$color-roxo
