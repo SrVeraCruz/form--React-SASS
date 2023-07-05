@@ -1,0 +1,49 @@
+@use '../variables'
+@use '../mixins'
+
+.form-control.score-container
+  @include mixins.center
+  align-items: unset
+  flex-direction: row
+  gap: 2rem
+
+  svg
+    font-size: 1.6rem
+    cursor: pointer
+    transition: variables.$transition
+
+    &:hover
+      fill: variables.$color-roxo
+
+  input
+    &:checked
+      ~ svg
+        fill: variables.$color-roxo
+
+      ~ p
+        font-weight: bold
+
+  .radio-container
+    text-align: center
+    position: relative
+
+    input
+      opacity: 0
+      position: absolute
+      top: 1rem
+      left: 2rem
+
+    p
+      font-weight: 300
+      font-style: italic
+      font-size: .7rem
+      margin-top: .4rem
+
+.form-control #comment
+    @include mixins.input
+    height: 7.5rem
+    min-height: 2.3rem
+    max-height: 15rem
+    resize: vertical
+    transition: none
+    
